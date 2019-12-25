@@ -76,8 +76,8 @@ export default class Register extends Component {
                     <Form.Group controlId="formGridState">
                         <Form.Label> Role</Form.Label>
                         <Form.Control as="select" name="role" onChange={ (e) => this.setState({ role: e.target.value })}>
-                            <option>company</option>
-                            <option>engineer</option>
+                            <option value='company'>company</option>
+                            <option value='engineer'>engineer</option>
                         </Form.Control>
                     </Form.Group>
                     <Form.Group as={Row}>

@@ -7,6 +7,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getEngineer, deleteEngineer } from '../redux/actions/Profile'
+import NumberFormat from 'react-number-format'
 
 class Profile extends Component {
     
@@ -75,7 +76,7 @@ class Profile extends Component {
                     </tr>
                     <tr>
                     <td>Expected Salary</td>
-                    <td>{(this.props.Profile.expectedSalary!==null)&&(this.props.Profile.expectedSalary!=='null')&&this.props.Profile.expectedSalary}</td>
+                    <td><NumberFormat value={this.props.Profile.expectedSalary} displayType='text' thousandSeparator prefix='Rp. ' /></td>
                     </tr>
                     <tr>
                     <td>Skill</td>

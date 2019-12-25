@@ -31,8 +31,8 @@ class Login extends Component {
             })
             localStorage.setItem('token', this.state.token)
             localStorage.setItem('id', this.state.id)
-            localStorage.setItem('email', this.state.email);
-            console.log(res.data)
+            localStorage.setItem('email', this.state.email)
+            localStorage.setItem('role', this.state.role)
             this.props.history.push('/')
         })
         .catch(err=>{
@@ -81,7 +81,7 @@ class Login extends Component {
                 </Form>
                 </Card.Body></Card>
                 <small>&copy;DenyKurniawan</small>
-                </Col></Row>{ (localStorage.getItem('token')) ? <Redirect to='/' /> : null }
+                </Col></Row>{ (localStorage.getItem('token')) ? (localStorage.getItem('role')==='engineer') ? <Redirect to='/companies' /> : <Redirect to='/' /> : null}
         </Container>
         )
     }

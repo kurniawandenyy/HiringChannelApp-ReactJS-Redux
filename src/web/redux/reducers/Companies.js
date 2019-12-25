@@ -7,7 +7,13 @@ const initialState = {
     page: '',
     previous: '',
     dataTotal:0,
-    user: ''
+    user: '',
+    id:'',
+    name:'',
+    email:'',
+    logo:'',
+    location:'',
+    description:''
 }
 
 const Companies = (state=initialState, action) => {
@@ -35,6 +41,25 @@ const Companies = (state=initialState, action) => {
                 ...state,
                 isLoading:false,
                 isError: true
+            }
+        case "GET_COMPANY_FULFILLED":
+            return{
+                ...state,
+                isLoading: false,
+                isError: false,
+                user: action.payload.data.result[0].name
+            }
+        case "PROFILE_COMPANY_FULFILLED":
+            return{
+                ...state,
+                isLoading: false,
+                isError: false,
+                id:action.payload.data.result[0].id,
+                name:action.payload.data.result[0].name,
+                email:action.payload.data.result[0].email,
+                logo:action.payload.data.result[0].logo,
+                location:action.payload.data.result[0].location,
+                description:action.payload.data.result[0].description
             }
         default:
             return state

@@ -14,3 +14,8 @@ export const updateEngineer = (url, data, config) => ({
     type: "UPDATE_ENGINEER",
     payload: axios.put(url, data, config)
 })
+
+export const getCompany = url => ({
+    type: "GET_COMPANY",
+    payload: axios.get(url)
+})

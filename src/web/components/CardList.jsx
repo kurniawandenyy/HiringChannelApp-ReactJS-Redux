@@ -1,43 +1,71 @@
 import React from 'react'
-import { Card, Row } from 'react-bootstrap'
+import { Card, Row, Container, Col } from 'react-bootstrap'
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faEnvelope, faMoneyBillWave } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import '../css/style.css'
+import NumberFormat from 'react-number-format'
 
 function CardList(props) {
     return (
         <>
-        <Row className='justify-content-center mt-4'>
         { props.Engineers.card.map(item => (
-            (!item.photo) ? 
-        <Card style={{ marginBottom:'15px', marginRight: '20px', borderRadius:'8px', width: '15rem', height:'20rem', backgroundImage: `url(/img/profile.jpg)`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
-            <Card.Body style={{ height: '200px'}}>
-            </Card.Body>
-            <Card.Footer className="text-white bg-dark" style={{ borderRadius:'0px 0px 8px 8px', opacity: '0.8'}}>
-                <b style={{ fontSize : '18px'}}><Link to={`/engineerprofile/${item.id}`} style={{ color: 'white' }}> {item.name}</Link></b><br />
-                <div style={{ fontSize : '16px', lineHeight:'15px'}}>
-                <small> {item.description}</small><br/>
-                <small><FontAwesomeIcon icon={faEnvelope} size='md'></FontAwesomeIcon> {item.email}</small><br />
-                <small><FontAwesomeIcon icon={faMoneyBillWave} size='md'></FontAwesomeIcon> IDR {item.expected_salary}</small><br /></div>
-                    <small>Skill :</small><br />
-                <div className='ml-3' style={{ fontSize : '16px', lineHeight:'15px'}}><small> <p>{item.skill}</p></small></div>
-            </Card.Footer>
-            </Card> :
-            <Card style={{ marginBottom:'15px', marginRight: '20px', borderRadius:'8px', width: '15rem', height:'20rem', backgroundImage: `url(`+process.env.REACT_APP_BASE_URL+`uploads/engineers/${item.photo})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
-            <Card.Body style={{ height: '200px'}}>
-            </Card.Body>
-            <Card.Footer className="text-white bg-dark" style={{ borderRadius:'0px 0px 8px 8px', opacity: '0.8'}}>
-                <b style={{ fontSize : '18px'}}><Link to={`/engineerprofile/${item.id}`} style={{ color: 'white' }}> {item.name}</Link></b><br />
-                <div style={{ fontSize : '16px', lineHeight:'15px'}}>
-                <small> {item.description}</small><br/>
-                <small><FontAwesomeIcon icon={faEnvelope} size='md'></FontAwesomeIcon> {item.email}</small><br />
-                <small><FontAwesomeIcon icon={faMoneyBillWave} size='md'></FontAwesomeIcon> IDR {item.expected_salary}</small><br /></div>
-                    <small>Skill :</small><br />
-                <div className='ml-3' style={{ fontSize : '16px', lineHeight:'15px'}}><small> <p>{item.skill}</p></small></div>
-            </Card.Footer>
-            </Card>
-        ))}</Row>
+            (!item.photo) ?
+            <div class='containerImage'>
+                <img src='/img/profil.jpg' className='imageGrid' alt='CardImage' />
+                <div class='overlay'>
+                    <Container>
+                        <Row>
+                            <Link to={`/engineerprofile/${item.id}`} style={{ color: 'white', fontWeight: 'bolder'}}>{item.name}</Link>
+                        </Row>
+                        <Row style={{ fontSize: '11px' }}>
+                            <Col style={{ padding: '0px'}}>
+                                <FontAwesomeIcon icon={faEnvelope} />&nbsp;&nbsp;{item.email}
+                            </Col>
+                        </Row>
+                        <Row style={{ fontSize: '11px' }}>
+                            <Col style={{ padding: '0px'}}>
+                                <FontAwesomeIcon icon={faMoneyBillWave} />&nbsp;&nbsp;
+                                <NumberFormat value={item.expected_salary} displayType='text' thousandSeparator prefix='Rp.' />
+                            </Col>
+                        </Row>
+                        <Row style={{ fontSize: '11px', fontWeight:'bolder'}}>
+                            <Col style={{ padding:'0px'}}> Skills :</Col>
+                        </Row>
+                        <Row style={{ fontSize: '11px', fontWeight: 'Bolder'}}>
+                            <Col style={{ padding: '0px'}}>{item.skill}</Col>
+                        </Row>
+                    </Container>
+                </div>
+            </div> :
+            <div class='containerImage'>
+            <img src={process.env.REACT_APP_BASE_URL+`uploads/engineers/${item.photo}`} className='imageGrid' alt='CardImage' />
+            <div class="overlay">
+                <Container>
+                    <Row>
+                        <Link to={`/engineerprofile/${item.id}`} style={{ color: 'white', fontWeight: 'bolder'}}>{item.name}</Link>
+                    </Row>
+                    <Row style={{ fontSize: '11px' }}>
+                        <Col style={{ padding: '0px'}}>
+                            <FontAwesomeIcon icon={faEnvelope} />&nbsp;&nbsp;{item.email}
+                        </Col>
+                    </Row>
+                    <Row style={{ fontSize: '11px' }}>
+                        <Col style={{ padding: '0px'}}>
+                            <FontAwesomeIcon icon={faMoneyBillWave} />&nbsp;&nbsp;
+                            <NumberFormat value={item.expected_salary} displayType='text' thousandSeparator prefix='Rp.' />
+                        </Col>
+                    </Row>
+                    <Row style={{ fontSize: '11px', fontWeight: 'bolder'}}>
+                        <Col style={{ padding: '0px'}}> Skills :</Col>
+                    </Row>
+                    <Row style={{ fontSize: '11px', fontWeight: 'Bolder'}}>
+                        <Col style={{ padding: '0px'}}>{item.skill}</Col>
+                    </Row>
+                </Container>
+            </div>
+        </div> ))}
         </>
     )
 }

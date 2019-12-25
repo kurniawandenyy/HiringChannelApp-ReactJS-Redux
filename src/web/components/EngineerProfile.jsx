@@ -5,28 +5,24 @@ import Header from '../Header'
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { engineerProfile, getEngineers } from '../redux/actions/Engineers'
+import { engineerProfile } from '../redux/actions/Engineers'
+import NumberFormat from 'react-number-format'
 
 class EngineerProfile extends Component {
 
     componentDidMount(){
         this.engineerProfile(process.env.REACT_APP_BASE_URL+`api/v1/engineers/`+this.props.match.params.id)
-        this.getName(process.env.REACT_APP_BASE_URL+'api/v1/engineers/'+localStorage.getItem('id'))
     }
 
     engineerProfile = (url) => {
         this.props.fetch(url)
     }
 
-    getName = (url) => {
-        this.props.get(url)
-    }
-
     render() {
         // console.log()
         return (
             <>
-            <Header user={this.props.Engineers.user}/>
+            <Header/>
             <Container className='justify-content-center mt-3' style={{ paddingBottom:'20px'}}>
                 <Row className='justify-content-center'>
                 <Col md='3'>
@@ -69,7 +65,7 @@ class EngineerProfile extends Component {
                     </tr>
                     <tr>
                     <td>Expected Salary</td>
-                    <td>{this.props.Engineers.expectedSalary}</td>
+                    <td><NumberFormat value={this.props.Engineers.expectedSalary} displayType='text' thousandSeparator prefix='Rp. ' /></td>
                     </tr>
                     <tr>
                     <td>Skill</td>
@@ -96,8 +92,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetch: url => dispatch(engineerProfile(url)),
-    get: url => dispatch(getEngineers(url))
+    fetch: url => dispatch(engineerProfile(url))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EngineerProfile)

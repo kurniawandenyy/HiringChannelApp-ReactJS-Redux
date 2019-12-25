@@ -4,30 +4,24 @@ import CardList from './CardList'
 import { Button,Row, ButtonToolbar, DropdownButton, Dropdown, Container } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { fetchCompanies } from '../../redux/actions/Companies'
-import { getEngineers } from '../../redux/actions/Engineers'
 
 class Card extends Component {
 
     componentDidMount(){
         // do something after component mounted
         this.fetchCompanies(process.env.REACT_APP_BASE_URL+'api/v1/companies?page=1')
-        { (localStorage.getItem('id')) && this.getName(process.env.REACT_APP_BASE_URL+'api/v1/engineers/'+localStorage.getItem('id')) }
       }
 
-      fetchCompanies = (url) => {
-        this.props.fetch(url)
-      }
-
-      getName = (url) => {
-        this.props.get(url)
-      }
+    fetchCompanies = (url) => {
+      this.props.fetch(url)
+    }
 
     render(){
       // console.log(this.props.Engineers.user)
         return (
           <>
           { (!localStorage.getItem('token')) ? this.props.history.push('/login') :
-          <Header searchBar='true' user={this.props.Engineers.user}/> }
+          <Header searchBar='true' /> }
           
           <Container className='justify-content-center mt-3' style={{ paddingBottom:'20px'}}>
           <Row>
@@ -86,13 +80,11 @@ class Card extends Component {
 }
 
 const mapStateToProps = state => ({
-  Engineers: state.Engineers,
   Companies: state.Companies
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetch: url => dispatch(fetchCompanies(url)),
-  get: url => dispatch(getEngineers(url))
+  fetch: url => dispatch(fetchCompanies(url))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card)

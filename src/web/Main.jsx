@@ -9,6 +9,7 @@ import EngineerProfile from './components/EngineerProfile'
 import Profile from './components/Profile'
 import EditProfile from './components/EditProfile'
 import Companies from './components/company/Card'
+import CompanyProfile from './components/company/CompanyProfile'
 
 function Main(){
     return(
@@ -20,6 +21,7 @@ function Main(){
             <Route path="/profile/:id" component={Profile} />
             <Route path="/edit/:id" component={EditProfile} />
             <Route path="/companies" component={Companies} />
+            <Route path="/companyprofile/:id" component={CompanyProfile} />
         </Switch>
     )
 }

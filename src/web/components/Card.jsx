@@ -3,22 +3,18 @@ import Header from '../Header'
 import CardList from './CardList'
 import { Button,Row, ButtonToolbar, DropdownButton, Dropdown, Container } from 'react-bootstrap'
 import { connect } from 'react-redux'
-import { fetchEngineers, getEngineers } from '../redux/actions/Engineers'
+import { fetchEngineers } from '../redux/actions/Engineers'
+import '../css/style.css'
 
 class Card extends Component {
 
     componentDidMount(){
         // do something after component mounted
         this.fetchEngineers(process.env.REACT_APP_BASE_URL+'api/v1/engineers?page=1')
-        { (localStorage.getItem('id')) && this.getName(process.env.REACT_APP_BASE_URL+'api/v1/engineers/'+localStorage.getItem('id')) }
       }
 
       fetchEngineers = (url) => {
         this.props.fetch(url)
-      }
-
-      getName = (url) => {
-        this.props.get(url)
       }
 
     render(){
@@ -26,7 +22,7 @@ class Card extends Component {
         return (
           <>
           { (!localStorage.getItem('token')) ? this.props.history.push('/login') :
-          <Header searchBar='true' user={this.props.Engineers.user}/> }
+          <Header searchBar='true'/> }
           
           <Container className='justify-content-center mt-3' style={{ paddingBottom:'20px'}}>
           <Row>
@@ -61,7 +57,7 @@ class Card extends Component {
                 </DropdownButton>
                 ),
             )}
-            </ButtonToolbar></Row>
+            </ButtonToolbar></Row></Container>
         { // conditional rendering show loading and error
           this.props.Engineers.isLoading ?
           <Row className="justify-content-center">
@@ -71,7 +67,8 @@ class Card extends Component {
               <Button variant="outline-primary" onClick={() => this.fetchEngineers(process.env.REACT_APP_BASE_URL+'api/v1/engineers?page=1')}> Try Again</Button>
             </Row>
           ) : (this.props.Engineers.dataTotal<=0) ? <Row className="justify-content-center"><p>No Data Found!</p></Row> :
-          <CardList list={this.props.Engineers.card}/>
+          <div className='containerGrid'>
+          <CardList list={this.props.Engineers.card}/></div>
             }
 
             <Row className="justify-content-center" >
@@ -80,7 +77,7 @@ class Card extends Component {
             }
             &nbsp;<Button variant="outline-primary" disabled> {this.props.Engineers.page} </Button>&nbsp;
             {(!this.props.Engineers.next) ? <Button variant="outline-primary" disabled> Next </Button> : <Button variant="outline-primary" onClick={() => this.fetchEngineers(this.props.Engineers.next)}> Next </Button>}</Row>
-            </Container>
+            
             </>
         );
     }
@@ -91,8 +88,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetch: url => dispatch(fetchEngineers(url)),
-  get: url => dispatch(getEngineers(url))
+  fetch: url => dispatch(fetchEngineers(url))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card)

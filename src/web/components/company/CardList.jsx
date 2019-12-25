@@ -15,7 +15,7 @@ function CardList(props) {
             <Card.Body style={{ height: '200px'}}>
             </Card.Body>
             <Card.Footer className="text-white bg-dark" style={{ borderRadius:'0px 0px 8px 8px', opacity: '0.8'}}>
-                <b style={{ fontSize : '18px'}}><Link to={`/engineerprofile/${item.id}`} style={{ color: 'white' }}> {item.name}</Link></b><br />
+                <b style={{ fontSize : '18px'}}><Link to={`/companyprofile/${item.id}`} style={{ color: 'white' }}> {item.name}</Link></b><br />
                 <div style={{ fontSize : '16px', lineHeight:'15px'}}>
                 <small> {item.description}</small><br/>
                 <small><FontAwesomeIcon icon={faEnvelope} size='md'></FontAwesomeIcon> {item.email}</small><br />
@@ -27,7 +27,7 @@ function CardList(props) {
             <Card.Body style={{ height: '200px'}}>
             </Card.Body>
             <Card.Footer className="text-white bg-dark" style={{ borderRadius:'0px 0px 8px 8px', opacity: '0.8'}}>
-                <b style={{ fontSize : '18px'}}><Link to={`/engineerprofile/${item.id}`} style={{ color: 'white' }}> {item.name}</Link></b><br />
+                <b style={{ fontSize : '18px'}}><Link to={`/companyprofile/${item.id}`} style={{ color: 'white' }}> {item.name}</Link></b><br />
                 <div style={{ fontSize : '16px', lineHeight:'15px'}}>
                 <small> {item.description}</small><br/>
                 <small><FontAwesomeIcon icon={faEnvelope} size='md'></FontAwesomeIcon> {item.email}</small><br />
