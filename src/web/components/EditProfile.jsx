@@ -3,7 +3,6 @@ import { Container, Card, Row, Col, Button, Form, Alert } from 'react-bootstrap'
 import Header from '../Header'
 import { connect } from 'react-redux'
 import { getEngineer, updateEngineer } from '../redux/actions/Profile'
-import { getEngineers } from '../redux/actions/Engineers'
 
 class EditProfile extends Component {
     constructor(){
@@ -19,13 +18,11 @@ class EditProfile extends Component {
             email:'',
             phone:'',
             showcase:'',
-            message: '',
-            user:''
+            message: ''
         }
     }
     componentDidMount(){
         this.getData(process.env.REACT_APP_BASE_URL+`api/v1/engineers/`+this.props.match.params.id)
-        this.getName(process.env.REACT_APP_BASE_URL+'api/v1/engineers/' + localStorage.getItem('id'))
         this.setState({
             name:this.props.Profile.name,
             photo: this.props.Profile.photo,
@@ -66,10 +63,6 @@ class EditProfile extends Component {
         this.props.update(url, formData, config)
     }
 
-    getName = (url) => {
-        this.props.getName(url)
-    }
-
     onFileChange = e =>{
         this.setState({
             photo: e.target.files[0]
@@ -77,10 +70,9 @@ class EditProfile extends Component {
     }
 
     render() {
-        console.log('pesan: '+this.props.Profile.message)
         return (
             <>
-            <Header user={this.props.Engineers.user}/>
+            <Header />
             <Container className='justify-content-center mt-3' style={{ paddingBottom:'20px'}}>
             <Row className='justify-content-center'>
             <Col md='3'>
@@ -152,13 +144,11 @@ class EditProfile extends Component {
 }
 
 const mapStateToProps = state => ({
-    Profile: state.Profile,
-    Engineers: state.Engineers
+    Profile: state.Profile
 })
 
 const mapDispatchToProps = dispatch => ({
     get: url => dispatch(getEngineer(url)),
-    getName: url => dispatch(getEngineers(url)),
     update: (url, data, config) => dispatch(updateEngineer(url, data, config))
 })
 

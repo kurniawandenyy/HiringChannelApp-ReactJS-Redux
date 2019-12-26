@@ -1,7 +1,7 @@
 const initialState = {
     id: '',
     name:'',
-    photo:'',
+    photo:null,
     description:'',
     skill:'',
     location:'',
@@ -13,7 +13,14 @@ const initialState = {
     isDeleted: false,
     isError: false,
     isLoading: false,
-    message: ''
+    message: '',
+
+    CompanyId: '',
+    CompanyName: '',
+    CompanyLogo: null,
+    CompanyDesc: '',
+    CompanyLocation: '',
+    CompanyEmail: '',
 }
 
 const Profile = (state=initialState, action) => {
@@ -21,11 +28,14 @@ const Profile = (state=initialState, action) => {
         case "GET_ENGINEER_PENDING":
             case "DELETE_ENGINEER_PENDING":
                 case "UPDATE_ENGINEER_PENDING":
-                    return{
-                        ...state,
-                        isLoading: true,
-                        isError: false
-                    }
+                    case "GET_COMPANY_PENDING":
+                        case "DELETE_COMPANY_PENDING":
+                            case "UPDATE_COMPANY_PENDING":
+                                return{
+                                    ...state,
+                                    isLoading: true,
+                                    isError: false
+                                }
         case "GET_ENGINEER_FULFILLED":
             let date = new Date(action.payload.data.result[0].date_of_birth)
             let dob = (date.getUTCMonth()+1) > 9 ?  date.getUTCFullYear()+'-'+(date.getUTCMonth()+1)+'-'+date.getUTCDate() :
@@ -46,41 +56,57 @@ const Profile = (state=initialState, action) => {
                 isError: false,
                 isLoading: false
             }
-        case "GET_ENGINEER_REJECTED":
+        case "GET_COMPANY_FULFILLED":
             return{
                 ...state,
-                isLoading: false,
-                isError: true
-            }
-        case "DELETE_ENGINEER_FULFILLED":
-            return{
-                ...state,
-                isDeleted: true,
-                isLoading: false,
-                isError: false
-            }
-        case "DELETE_ENGINEER_REJECTED":
-            return{
-                ...state,
-                isDeleted: false,
-                isLoading: false,
-                isError: true
-            }
-        case "UPDATE_ENGINEER_FULFILLED":
-            return{
-                ...state,
+                CompanyId: action.payload.data.result[0].id,
+                CompanyName: action.payload.data.result[0].name,
+                CompanyLogo: action.payload.data.result[0].logo,
+                CompanyEmail: action.payload.data.result[0].email,
+                CompanyDesc: action.payload.data.result[0].description,
+                CompanyLocation: action.payload.data.result[0].location,
                 isError: false,
-                isLoading: false,
-                message: 'Update Success!'
+                isLoading: false
             }
-        
+        case "GET_ENGINEER_REJECTED":
+            case "GET_COMPANY_REJECTED":
+                return{
+                    ...state,
+                    isLoading: false,
+                    isError: true
+                }
+        case "DELETE_ENGINEER_FULFILLED":
+            case "DELETE_COMPANY_FULFILLED":
+                return{
+                    ...state,
+                    isDeleted: true,
+                    isLoading: false,
+                    isError: false
+                }
+        case "DELETE_ENGINEER_REJECTED":
+            case "DELETE_COMPANY_REJECTED":
+                return{
+                    ...state,
+                    isDeleted: false,
+                    isLoading: false,
+                    isError: true
+                }
+        case "UPDATE_ENGINEER_FULFILLED":
+            case "UPDATE_COMPANY_FULFILLED":
+                return{
+                    ...state,
+                    isError: false,
+                    isLoading: false,
+                    message: 'Update Success!'
+                }
         case "UPDATE_ENGINEER_REJECTED":
-            return{
-                ...state,
-                isError: true,
-                isLoading: false,
-                message: 'Update Failed!'
-            }
+            case "UPDATE_COMPANY_REJECTED":
+                return{
+                    ...state,
+                    isError: true,
+                    isLoading: false,
+                    message: 'Update Failed!'
+                }
         default:
             return state
     }

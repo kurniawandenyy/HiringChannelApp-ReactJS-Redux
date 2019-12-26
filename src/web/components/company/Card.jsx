@@ -4,6 +4,7 @@ import CardList from './CardList'
 import { Button,Row, ButtonToolbar, DropdownButton, Dropdown, Container } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { fetchCompanies } from '../../redux/actions/Companies'
+import '../../css/style.css'
 
 class Card extends Component {
 
@@ -54,7 +55,7 @@ class Card extends Component {
                 </DropdownButton>
                 ),
             )}
-            </ButtonToolbar></Row>
+            </ButtonToolbar></Row></Container>
         { // conditional rendering show loading and error
           this.props.Companies.isLoading ?
           <Row className="justify-content-center">
@@ -64,7 +65,8 @@ class Card extends Component {
               <Button variant="outline-primary" onClick={() => this.fetchCompanies(process.env.REACT_APP_BASE_URL+'api/v1/companies?page=1')}> Try Again</Button>
             </Row>
           ) : (this.props.Companies.dataTotal<=0) ? <Row className="justify-content-center"><p>No Data Found!</p></Row> :
-          <CardList list={this.props.Companies.card}/>
+          <div className='containerGrid'>
+          <CardList list={this.props.Companies.card}/></div>
             }
 
             <Row className="justify-content-center" >
@@ -73,7 +75,6 @@ class Card extends Component {
             }
             &nbsp;<Button variant="outline-primary" disabled> {this.props.Companies.page} </Button>&nbsp;
             {(!this.props.Companies.next) ? <Button variant="outline-primary" disabled> Next </Button> : <Button variant="outline-primary" onClick={() => this.fetchCompanies(this.props.Companies.next)}> Next </Button>}</Row>
-            </Container>
             </>
         );
     }

@@ -1,40 +1,62 @@
 import React from 'react'
-import { Card, Row } from 'react-bootstrap'
+import { Row, Col, Container } from 'react-bootstrap'
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import '../../css/style.css'
 
 function CardList(props) {
     return (
         <>
-        <Row className='justify-content-center mt-4'>
         { props.Companies.card.map(item => (
-            (!item.logo) ? 
-        <Card style={{ marginBottom:'15px', marginRight: '20px', borderRadius:'8px', width: '15rem', height:'20rem', backgroundImage: `url(/img/profile.jpg)`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
-            <Card.Body style={{ height: '200px'}}>
-            </Card.Body>
-            <Card.Footer className="text-white bg-dark" style={{ borderRadius:'0px 0px 8px 8px', opacity: '0.8'}}>
-                <b style={{ fontSize : '18px'}}><Link to={`/companyprofile/${item.id}`} style={{ color: 'white' }}> {item.name}</Link></b><br />
-                <div style={{ fontSize : '16px', lineHeight:'15px'}}>
-                <small> {item.description}</small><br/>
-                <small><FontAwesomeIcon icon={faEnvelope} size='md'></FontAwesomeIcon> {item.email}</small><br />
-                <small><FontAwesomeIcon icon={faMapMarkerAlt} size='md'></FontAwesomeIcon> {item.location}</small><br /></div>
-                    
-            </Card.Footer>
-            </Card> :
-            <Card style={{ marginBottom:'15px', marginRight: '20px', borderRadius:'8px', width: '15rem', height:'20rem', backgroundImage: `url(`+process.env.REACT_APP_BASE_URL+`uploads/companies/${item.logo})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
-            <Card.Body style={{ height: '200px'}}>
-            </Card.Body>
-            <Card.Footer className="text-white bg-dark" style={{ borderRadius:'0px 0px 8px 8px', opacity: '0.8'}}>
-                <b style={{ fontSize : '18px'}}><Link to={`/companyprofile/${item.id}`} style={{ color: 'white' }}> {item.name}</Link></b><br />
-                <div style={{ fontSize : '16px', lineHeight:'15px'}}>
-                <small> {item.description}</small><br/>
-                <small><FontAwesomeIcon icon={faEnvelope} size='md'></FontAwesomeIcon> {item.email}</small><br />
-                <small><FontAwesomeIcon icon={faMapMarkerAlt} size='md'></FontAwesomeIcon> {item.location}</small><br /></div>
-            </Card.Footer>
-            </Card>
-        ))}</Row>
+            (!item.logo) ?
+            <div class='containerImage'>
+                <img src='/img/profil.jpg' className='imageGrid' alt='CardImage' />
+                <div class='overlay'>
+                <Container>
+                    <Row>
+                        <Link to={`/companyprofile/${item.id}`} style={{ color: 'white', fontWeight: 'bolder'}}>{item.name}</Link>
+                    </Row>
+                    <Row style={{ fontSize: '11px' }}>
+                        <Col style={{ padding: '0px'}}>{item.description}</Col>
+                    </Row>
+                    <Row style={{ fontSize: '11px' }}>
+                        <Col style={{ padding: '0px'}}>
+                            <FontAwesomeIcon icon={faEnvelope} /> {item.email}
+                        </Col>
+                    </Row>
+                    <Row style={{ fontSize: '11px'}}>
+                        <Col style={{ padding: '0px'}}>
+                            <FontAwesomeIcon icon={faMapMarkerAlt} /> {item.location}
+                        </Col>
+                    </Row>
+                </Container>
+                </div>
+            </div> :
+            <div class='containerImage'>
+            <img src={process.env.REACT_APP_BASE_URL+`uploads/companies/${item.logo}`} className='imageGrid' alt='CardImage' />
+            <div class="overlay">
+                <Container>
+                    <Row>
+                        <Link to={`/companyprofile/${item.id}`} style={{ color: 'white', fontWeight: 'bolder'}}>{item.name}</Link>
+                    </Row>
+                    <Row style={{ fontSize: '11px' }}>
+                        <Col style={{ padding: '0px'}}>{item.description}</Col>
+                    </Row>
+                    <Row style={{ fontSize: '11px' }}>
+                        <Col style={{ padding: '0px'}}>
+                            <FontAwesomeIcon icon={faEnvelope} /> {item.email}
+                        </Col>
+                    </Row>
+                    <Row style={{ fontSize: '11px'}}>
+                        <Col style={{ padding: '0px'}}>
+                            <FontAwesomeIcon icon={faMapMarkerAlt} /> {item.location}
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        </div> ))}
         </>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Row, Container, Col } from 'react-bootstrap'
+import { Row, Container, Col } from 'react-bootstrap'
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faEnvelope, faMoneyBillWave } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'

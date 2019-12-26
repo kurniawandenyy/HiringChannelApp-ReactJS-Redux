@@ -49,7 +49,7 @@ class Header extends Component {
                             <Nav className="ml-auto">
                             {(localStorage.getItem('role')==='engineer') ? 
                             <Nav.Link className="mt-2" href={`/profile/${localStorage.getItem('id')}`}><FontAwesomeIcon icon={faUserCircle} size="lg" /> {first}</Nav.Link> :
-                        <Nav.Link className="mt-2" href={`/companies/${localStorage.getItem('id')}`}><FontAwesomeIcon icon={faUserCircle} size="lg" /> {first}</Nav.Link> }
+                        <Nav.Link className="mt-2" href={`/profilecompany/${localStorage.getItem('id')}`}><FontAwesomeIcon icon={faUserCircle} size="lg" /> {first}</Nav.Link> }
                             <hr style={{ border:'none', borderLeft: '1px solid hsla(200, 10%, 50%,100', height:'4vh', width:'1px' }} />
                             <Nav.Link className="mt-2" href="/"><FontAwesomeIcon icon={faCommentDots} size="lg" /></Nav.Link>
                             <Nav.Link className="mt-2" onClick={() => this.signOut()} href='/login'><FontAwesomeIcon icon={faSignOutAlt} size="lg" /></Nav.Link>

@@ -10,6 +10,8 @@ import Profile from './components/Profile'
 import EditProfile from './components/EditProfile'
 import Companies from './components/company/Card'
 import CompanyProfile from './components/company/CompanyProfile'
+import ProfileCompany from './components/company/Profile'
+import EditCompany from './components/company/EditProfile'
 
 function Main(){
     return(
@@ -22,6 +24,8 @@ function Main(){
             <Route path="/edit/:id" component={EditProfile} />
             <Route path="/companies" component={Companies} />
             <Route path="/companyprofile/:id" component={CompanyProfile} />
+            <Route path="/profilecompany/:id" component={ProfileCompany} />
+            <Route path="/editcompany/:id" component={EditCompany} />
         </Switch>
     )
 }

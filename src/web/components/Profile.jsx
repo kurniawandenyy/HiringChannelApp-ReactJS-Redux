@@ -34,7 +34,7 @@ class Profile extends Component {
         // console.log(this.state.id)
         return (
             <>
-            <Header user={this.props.Profile.name}/>
+            <Header/>
             <Container className='justify-content-center mt-3' style={{ paddingBottom:'20px'}}>
                 <Row className='justify-content-center'>
                 <Col md='3'>
