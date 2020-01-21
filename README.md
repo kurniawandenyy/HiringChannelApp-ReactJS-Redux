@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Hiring Channel App
 
-## Available Scripts
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Screenshot](#screenshot)
 
-In the project directory, you can run:
+## General info
+Hiring Channel app is a simple application to connect companies with job seekers.
 
-### `npm start`
+## Technologies
+Project is created with:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![js-standard-style](https://img.shields.io/badge/NodeJs-v.10.16-brightgreen)](https://nodejs.org/en/)
+[![js-standard-style](https://img.shields.io/badge/ReactJs-v.16.12.0-red)](https://reactjs.org)
+[![js-standard-style](https://img.shields.io/badge/React%20Redux-v.7.1-blueviolet)](https://react-redux.js.org/)
+	
+## Setup
+Steps to run this project:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
+* create new database
+* Rename .env.example file to .env
+* edit the .env file and enter your backend url
+* $ npm install
+* $ npm start
+```
 
-### `npm test`
+## Screenshot
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - Login Form
+  
+<p align="center"><img src=https://user-images.githubusercontent.com/48039021/72785887-ce107980-3c5e-11ea-9731-1691a5a9ce49.png width="500px" /></p>
 
-### `npm run build`
+- List Engineers
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center"><img src=https://user-images.githubusercontent.com/48039021/72785943-ef716580-3c5e-11ea-8731-d391521fb504.png width="600px" align="middle" /></p>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Profile
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="center"><img src=https://user-images.githubusercontent.com/48039021/72786138-6ad31700-3c5f-11ea-96a8-a170bc523403.png width="600px" /></p>
 
-### `npm run eject`
+- List Companies
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="center"><img src=https://user-images.githubusercontent.com/48039021/72786166-7cb4ba00-3c5f-11ea-9800-e3bf1a586a7a.png width="600px" /></p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Company Profile
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<p align="center"><img src=https://user-images.githubusercontent.com/48039021/72786190-8b9b6c80-3c5f-11ea-942d-846203863a97.png width="600px" /></p>
