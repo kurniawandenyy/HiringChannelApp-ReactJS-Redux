@@ -20,7 +20,7 @@ Project is created with:
 Steps to run this project:
 
 ```
-* create new database
+* clone this project
 * Rename .env.example file to .env
 * edit the .env file and enter your backend url
 * $ npm install
