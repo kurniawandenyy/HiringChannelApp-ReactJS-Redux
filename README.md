@@ -45,14 +45,14 @@ Steps to run this project:
 ## Screenshot
 <table>
 <tr align='center'>
-<th><img src=https://user-images.githubusercontent.com/48039021/72867282-f953a100-3d10-11ea-92f4-1a6850160d6f.png width="300px" /></th>
-<th><img src=https://user-images.githubusercontent.com/48039021/72867301-0b354400-3d11-11ea-8a0e-8a40d4b1d720.png width="300px" /></th></tr>
+<td><img src=https://user-images.githubusercontent.com/48039021/72867282-f953a100-3d10-11ea-92f4-1a6850160d6f.png width="300px" /></td>
+<td><img src=https://user-images.githubusercontent.com/48039021/72867301-0b354400-3d11-11ea-8a0e-8a40d4b1d720.png width="300px" /></td></tr>
 <tr align="center">
-<th><img src=https://user-images.githubusercontent.com/48039021/72867407-67986380-3d11-11ea-94af-225c81a2462f.png width="300px" /></th>
-<th><img src=https://user-images.githubusercontent.com/48039021/72867428-7ed75100-3d11-11ea-8539-9ac717299c8c.png width="300px" /></th></tr>
+<td><img src=https://user-images.githubusercontent.com/48039021/72867407-67986380-3d11-11ea-94af-225c81a2462f.png width="300px" /></td>
+<td><img src=https://user-images.githubusercontent.com/48039021/72867428-7ed75100-3d11-11ea-8539-9ac717299c8c.png width="300px" /></td></tr>
 <tr align="center">
-<th><img src=https://user-images.githubusercontent.com/48039021/72867447-8d256d00-3d11-11ea-887f-526f483eb9fc.png width="300px" /></th>
-<th><img src=https://user-images.githubusercontent.com/48039021/72867473-9f071000-3d11-11ea-95af-437485890eb4.png width="300px" /></th></tr>
+<td><img src=https://user-images.githubusercontent.com/48039021/72867447-8d256d00-3d11-11ea-887f-526f483eb9fc.png width="300px" /></td>
+<td><img src=https://user-images.githubusercontent.com/48039021/72867473-9f071000-3d11-11ea-95af-437485890eb4.png width="300px" /></td></tr>
 </table>
 	
 ## Contact
