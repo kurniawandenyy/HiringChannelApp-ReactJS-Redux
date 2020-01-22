@@ -22,8 +22,7 @@ Project is created with:
 ## Requirements
 1. <a href="https://www.npmjs.com/get-npm">NPM</a>
 2. [Backend Hiring Channel App](https://github.com/kurniawandenyy/BackendHiringChannelApp)
-3. Node_modules
-4. Web Browser (ex. Chrome/Firefox)
+3. Web Browser (ex. Chrome/Firefox)
 
 ## Setup
 Steps to run this project:
@@ -31,13 +30,16 @@ Steps to run this project:
  - Clone this project
  
 	``` git clone https://github.com/kurniawandenyy/HiringChannelApp-ReactJS-Redux.git ```
+	
  - Rename .env.example file to .env
  - Edit the .env file and enter your backend url
  
  	``` REACT_APP_BASE_URL = http://localhost:8000/ ```
+	
  - Install NPM Packages
  
 	``` npm install ```
+	
  - Run Project
  
 	``` npm start ```
