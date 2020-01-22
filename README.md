@@ -2,49 +2,59 @@
 
 ## Table of contents
 * [General info](#general-info)
-* [Technologies](#technologies)
+* [Built with](#built-with)
+* [Requirements](#requirements)
 * [Setup](#setup)
 * [Screenshot](#screenshot)
+* [Contact](#contact)
 
 ## General info
-Hiring Channel app is a simple application to connect companies with job seekers.
+Hiring Channel app is a simple application to connect companies with job seekers. This project for handle frontend only. Built using ReactJS Framework.
+ReactJS is A JavaScript library for building user interfaces. [More about ReactJs](https://reactjs.org/)
 
-## Technologies
+## Built With
 Project is created with:
 
 [![js-standard-style](https://img.shields.io/badge/NodeJs-v.10.16-brightgreen)](https://nodejs.org/en/)
 [![js-standard-style](https://img.shields.io/badge/ReactJs-v.16.12.0-red)](https://reactjs.org)
 [![js-standard-style](https://img.shields.io/badge/React%20Redux-v.7.1-blueviolet)](https://react-redux.js.org/)
-	
+
+## Requirements
+1. <a href="https://www.npmjs.com/get-npm">NPM</a>
+2. [Backend Hiring Channel App](https://github.com/kurniawandenyy/BackendHiringChannelApp)
+3. Node_modules
+4. Web Browser (ex. Chrome/Firefox)
+
 ## Setup
 Steps to run this project:
 
-```
-* clone this project
-* Rename .env.example file to .env
-* edit the .env file and enter your backend url
-* $ npm install
-* $ npm start
-```
+ - Clone this project
+ 
+	``` git clone https://github.com/kurniawandenyy/HiringChannelApp-ReactJS-Redux.git ```
+ - Rename .env.example file to .env
+ - Edit the .env file and enter your backend url
+ 
+ 	``` REACT_APP_BASE_URL = http://localhost:8000/ ```
+ - Install NPM Packages
+ 
+	``` npm install ```
+ - Run Project
+ 
+	``` npm start ```
 
 ## Screenshot
+<table>
+<tr align='center'>
+<th><img src=https://user-images.githubusercontent.com/48039021/72867282-f953a100-3d10-11ea-92f4-1a6850160d6f.png width="300px" /></th>
+<th><img src=https://user-images.githubusercontent.com/48039021/72867301-0b354400-3d11-11ea-8a0e-8a40d4b1d720.png width="300px" /></th></tr>
+<tr align="center">
+<th><img src=https://user-images.githubusercontent.com/48039021/72867407-67986380-3d11-11ea-94af-225c81a2462f.png width="300px" /></th>
+<th><img src=https://user-images.githubusercontent.com/48039021/72867428-7ed75100-3d11-11ea-8539-9ac717299c8c.png width="300px" /></th></tr>
+<tr align="center">
+<th><img src=https://user-images.githubusercontent.com/48039021/72867447-8d256d00-3d11-11ea-887f-526f483eb9fc.png width="300px" /></th>
+<th><img src=https://user-images.githubusercontent.com/48039021/72867473-9f071000-3d11-11ea-95af-437485890eb4.png width="300px" /></th></tr>
+</table>
+	
+## Contact
 
-  - Login Form
-  
-<p align="center"><img src=https://user-images.githubusercontent.com/48039021/72785887-ce107980-3c5e-11ea-9731-1691a5a9ce49.png width="500px" /></p>
-
-- List Engineers
-
-<p align="center"><img src=https://user-images.githubusercontent.com/48039021/72785943-ef716580-3c5e-11ea-8731-d391521fb504.png width="600px" align="middle" /></p>
-
-- Profile
-
-<p align="center"><img src=https://user-images.githubusercontent.com/48039021/72786138-6ad31700-3c5f-11ea-96a8-a170bc523403.png width="600px" /></p>
-
-- List Companies
-
-<p align="center"><img src=https://user-images.githubusercontent.com/48039021/72786166-7cb4ba00-3c5f-11ea-9800-e3bf1a586a7a.png width="600px" /></p>
-
-- Company Profile
-
-<p align="center"><img src=https://user-images.githubusercontent.com/48039021/72786190-8b9b6c80-3c5f-11ea-942d-846203863a97.png width="600px" /></p>
+If you want to contact me you can reach me at <denykurniawan146@gmail.com>.
