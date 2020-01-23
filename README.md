@@ -20,7 +20,7 @@ Project is created with:
 [![js-standard-style](https://img.shields.io/badge/React%20Redux-v.7.1-blueviolet)](https://react-redux.js.org/)
 
 ## Requirements
-1. <a href="https://www.npmjs.com/get-npm">NPM</a>
+1. <a href="https://nodejs.org/en/">NodeJs</a>
 2. [Backend Hiring Channel App](https://github.com/kurniawandenyy/BackendHiringChannelApp)
 3. Web Browser (ex. Chrome/Firefox)
 
