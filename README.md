@@ -15,7 +15,6 @@ ReactJS is A JavaScript library for building user interfaces. [More about ReactJ
 ## Built With
 Project is created with:
 
-[![js-standard-style](https://img.shields.io/badge/NodeJs-v.10.16-brightgreen)](https://nodejs.org/en/)
 [![js-standard-style](https://img.shields.io/badge/ReactJs-v.16.12.0-red)](https://reactjs.org)
 [![js-standard-style](https://img.shields.io/badge/React%20Redux-v.7.1-blueviolet)](https://react-redux.js.org/)
 
